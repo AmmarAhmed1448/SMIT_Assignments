@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Assignment</title>
+    <style>
+        *{
+            /* color: aliceblue; */
+            margin: 0%;
+            padding: 0%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        table {
+            display: inline-block;
+        }
+
+        h1{
+            text-align: center;
+            color: rgb(93, 118, 153);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        fieldset{
+            width: 70%;
+            margin: auto;
+            background-color: rgb(233, 233, 233);
+        }
+
+
+
+        label, span {
+            display: inline-block;
+            width: 150px;
+            margin: 5px;
+        }
+
+        .hobbyContainer label, .genderContainer label, .coursesContainer label{
+            width: auto;
+        }
+
+        input[text]{
+            color: black;
+        }
+
+
+        .buttonsContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 10px;
+            width: 100px;
+            height: 30px;
+            background-color: rgb(89, 89, 155);
+            color: aliceblue;
+            border: none;
+            border-radius: 7px;
+        }
+
+        .qualificationContainer, .textAreaContainer{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Registration Form</h1>
+    <fieldset>
+        <form action="#" method="post">
+            <label for="fName">First Name</label>
+            <input type="text" name="fName" id="fName" maxlength="30"> (max 30 characters a-z and A-Z
+            ------------------------------------------------------)
+            <br>
+            <label for="lName">Last Name</label>
+            <input type="text" name="lName" id="lName" maxlength="30"> (max 30 characters a-z and A-Z)
+            <br>
+            <label for="DOB">Date of Birth</label>
+            <input type="date" name="DOB" id="DOB">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="mobileNo">Mobile Number</label>
+            <input type="tel" name="mobileNo" id="mobileNo"> 11 digit Number
+            <br>
+            <p class="genderContainer">
+                <span>Gender</span>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </p>
+            <br>
+            <div class="textAreaContainer">
+                <label for="address">Address</label>
+                <textarea name="address" id="address"></textarea>
+            </div>
+
+            <br>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" maxlength="30"> (max 30 characters a-z and A-Z)
+            <br>
+            <label for="pin">PIN Code</label>
+            <input type="password" name="pin" id="pin" maxlength="6"> (6 digit PIN)
+            <br>
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" maxlength="30"> (max 30 characters a-z and A-Z)
+            <br>
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country">
+            <br>
+            <p class="hobbyContainer"><span>Hobbies</span>
+            
+                <input type="checkbox" name="hobby" id="drawing" value="Drawing">
+                <label for="drawing">Drawing</label>
+                <input type="checkbox" name="hobby" id="football" value="Football">
+                <label for="football">Football</label>
+                <input type="checkbox" name="hobby" id="military" value="Military">
+                <label for="military">Military</label>
+                <input type="checkbox" name="hobby" id="writing" value="Writing">
+                <label for="writing">Writing</label>
+                <input type="checkbox" name="hobby" id="sleeping" value="Sleeping">
+                <label for="sleeping">Sleeping</label>
+                <input type="checkbox" name="hobby" id="others" value="others" onchange="disFunc()">
+                <label for="others">Others</label>
+                <input type="text" name="otherHobby" id="otherHobby" disabled>
+            
+            </p>
+            <div class="qualificationContainer">
+                <span>Qualification</span>
+            <table>
+                <tr>
+                    <th>S No.</th>
+                    <th>Examination</th>
+                    <th>Board</th>
+                    <th>Percentage</th>
+                    <th>Year of Passing</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Class X</td>
+                    <td><input type="text" name="XBoard" class="qualification"></td>
+                    <td><input type="text" name="XPercentage" class="qualification"></td>
+                    <td><input type="text" name="XYOP" class="qualification"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Class XII</td>
+                    <td><input type="text" name="XIIBoard" class="qualification"></td>
+                    <td><input type="text" name="XIIPercentage" class="qualification"></td>
+                    <td><input type="text" name="XIIYOP" class="qualification"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Graduation</td>
+                    <td><input type="text" name="gradBoard" class="qualification"></td>
+                    <td><input type="text" name="gradPercentage" class="qualification"></td>
+                    <td><input type="text" name="gradYOP" class="qualification"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Masters</td>
+                    <td><input type="text" name="mastersBoard" class="qualification"></td>
+                    <td><input type="text" name="mastersPercentage" class="qualification"></td>
+                    <td><input type="text" name="mastersYOP" class="qualification"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>(10 chars max)</td>
+                    <td>(upto 2 decimal places)</td>
+                    <td></td>
+                </tr>
+            </table>
+            </div>
+            <div class="coursesContainer">
+                <span>Courses applied for:</span>
+                <input type="radio" name="courses" id="bca">
+                <label for="bca">BCA</label>
+                <input type="radio" name="courses" id="bcom">
+                <label for="bcom">B.Com</label>
+                <input type="radio" name="courses" id="bsc">
+                <label for="bsc">B.Sc</label>
+                <input type="radio" name="courses" id="ba">
+                <label for="ba">BA</label>
+            </div>
+            <div class="buttonsContainer">
+                <button type="submit" class="resub">Submit</button>
+                <button type="reset" class="resub">Reset</button>
+            </div>
+        </form>
+    </fieldset>
+
+
+
+    <script>
+        function disFunc() {
+            let othersCheckBox = document.querySelector("#others");
+            let otherTextBox = document.querySelector("#otherHobby");
+            if (!othersCheckBox.checked) {
+                otherTextBox.disabled = true;
+            }
+            else {
+                otherTextBox.disabled = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
